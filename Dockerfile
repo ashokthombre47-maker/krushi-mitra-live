@@ -6,7 +6,7 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 
 # तुझी .war फाईल Tomcat च्या webapps फोल्डरमध्ये कॉपी करा
 # लक्षात ठेव: तुझ्या फाईलचे नाव 'AplaKrushiMitr.war' असेल तर खाली तेच वापरा
-COPY AplaKrushiMitr.war /usr/local/tomcat/webapps/ROOT.war
+COPY AplaKrushiMitra.war /usr/local/tomcat/webapps/ROOT.war
 
 # Port ८०८० ओपन करा
 EXPOSE 8080
