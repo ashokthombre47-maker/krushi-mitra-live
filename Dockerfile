@@ -1,11 +1,10 @@
 FROM tomcat:9.0-jdk17-openjdk-slim
 
-# Clean default webapps and prepare for clean deployment
-RUN rm -rf /usr/local/tomcat/webapps/* && \
-    cp -av /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps/ || true
+# 1. टॉमकॅटचे सर्व जुने डीफॉल्ट पेजेस आणि कचरा फाईल्स पूर्णपणे डिलीट करा
+RUN rm -rf /usr/local/tomcat/webapps/*
+RUN rm -rf /usr/local/tomcat/webapps.dist
 
-# Deploy your project as the ROOT application
-# Ensure AplaKrushiMitr.war is in the same folder as this Dockerfile
+# 2. तुझी AplaKrushiMitr.war फाईल टॉमकॅटच्या मुख्य webapps मध्ये ROOT.war म्हणून कॉपी करा
 COPY AplaKrushiMitr.war /usr/local/tomcat/webapps/ROOT.war
 
 EXPOSE 8080
